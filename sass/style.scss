@@ -1,0 +1,189 @@
+$basic_color: #222D38;
+$section_color: #F9F9F9;
+$accent_color: #C8CBCF;
+
+@mixin sections_param {
+	background-color: $section_color;
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+
+@mixin headers_param {
+	text-transform: uppercase;
+	padding-top: 60px;
+	font-size: 35px;
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+
+@mixin p_param {
+	padding-top: 5%;
+	font-size: 25px;
+}
+
+@mixin hover_icon {
+	transform: scale(1.3);
+	transition: .3s;
+	color: $accent_color;
+}
+
+@mixin icons {
+	color: $basic_color;
+	padding: 0;
+	margin: 0 30px;
+}
+
+body {
+	overflow-x: hidden;
+	font-family: 'Arimo', sans-serif;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	height: 100vh;
+	background-image: url("https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-size: cover;
+	background-position: top center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	
+}
+
+.hero {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+
+	h1 {
+		color: $basic_color;
+		font-size: 45px;
+	}
+}
+
+.nav {
+	background-color: $basic_color;
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	top: 0;
+
+	ul {
+		li {
+			padding-right: 10px;
+			text-transform: uppercase;
+			display: inline;
+			color: $accent_color;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.about_me {
+	@include sections_param;
+	h2 {
+		@include headers_param;
+	}
+	p {
+		@include p_param;
+	}
+	.info {
+		width: 40%;
+		float: right;
+	}
+}
+
+.skills {
+	@include sections_param;
+	h2 {
+		@include headers_param;
+	}
+	p {
+		@include p_param;
+	}
+
+	i {
+		@include icons;
+		font-size: 60px;
+		margin-left: 10%;
+		&:hover {
+			@include hover_icon;
+			transform: none;
+		}
+
+	}
+}
+
+.contact {
+	@include sections_param;
+	height: auto;
+	h2 {
+		@include headers_param;
+	}
+
+	i {
+		@include icons;
+		font-size: 40px;
+		&.fa-envelope, &.fa-phone-square {
+			margin-right: 5px;
+			&:hover {
+				transform: none;
+				color: $basic_color;
+			}
+		}
+
+		&:hover {
+			@include hover_icon;
+		}
+
+	}
+
+	a {
+		color: $basic_color;
+	}
+
+	p.mobile {
+		display: inline;
+		font-size: 25px;
+		margin-bottom: 15px;
+	}
+
+}
+
+.fa-arrow-up {
+	font-size: 35px;
+	position: fixed;
+	top: 85%;
+	left: 95%;
+	&:hover {
+		@include hover_icon;
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $basic_color;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	color: #fff;
+}
+
+@media (max-width: 768px) {
+	.contact {
+		.fa-facebook-square, .fa-github, .fa-linkedin {
+			display: block;
+		}
+	}
+}
