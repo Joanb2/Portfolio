@@ -1,3 +1,6 @@
+/** {
+	border: 1px solid black;
+}*/
 body {
   overflow-x: hidden;
   font-family: 'Arimo', sans-serif;
@@ -22,13 +25,22 @@ body {
   width: 100%;
 }
 
+.hero .hello {
+  display: none;
+}
+
 .hero h1 {
-  color: #222D38;
-  font-size: 45px;
+  color: #0B1825;
+  font-size: 60px;
+  font-weight: 900;
 }
 
 .nav {
-  background-color: #222D38;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #040D16;
   width: 100%;
   height: 50px;
   padding: 0;
@@ -37,120 +49,192 @@ body {
   top: 0;
 }
 
+.nav ul {
+  margin: 0;
+}
+
 .nav ul li {
-  padding-right: 10px;
+  margin-right: 20px;
+  padding: 0 0 5px 0;
+  text-align: center;
   text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
   display: inline;
-  color: #C8CBCF;
+  color: #C8D1D1;
 }
 
 .nav ul li:hover {
   cursor: pointer;
+  border-bottom: 2px solid #C8D1D1;
 }
 
 .about_me {
-  background-color: #F9F9F9;
+  background-color: #0B1825;
   height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+.about_me .hide {
+  opacity: 0;
 }
 
 .about_me h2 {
+  opacity: 1;
   text-transform: uppercase;
+  font-weight: 900;
   padding-top: 60px;
   font-size: 35px;
   text-align: center;
-  border-bottom: 1px solid black;
+  color: #C8D1D1;
 }
 
 .about_me p {
-  padding-top: 5%;
-  font-size: 25px;
-}
-
-.about_me .info {
-  width: 40%;
-  float: right;
+  padding: 20px;
+  font-size: 20px;
+  margin: 25px;
+  color: #C8D1D1;
 }
 
 .skills {
-  background-color: #F9F9F9;
   height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: #C8D1D1;
+  z-index: -1;
+}
+
+.skills .hide {
+  opacity: 0;
 }
 
 .skills h2 {
+  opacity: 1;
   text-transform: uppercase;
+  font-weight: 900;
   padding-top: 60px;
   font-size: 35px;
   text-align: center;
-  border-bottom: 1px solid black;
+  color: #0B1825;
 }
 
 .skills p {
-  padding-top: 5%;
-  font-size: 25px;
+  padding: 20px;
+  font-size: 20px;
+  margin: 25px;
+  color: #0B1825;
 }
 
-.skills i {
-  color: #222D38;
+.skills .skills_icons {
+  margin-top: 0;
+}
+
+.skills .skills_icons i {
+  color: #0B1825;
   padding: 0;
-  margin: 0 30px;
   font-size: 60px;
   margin-left: 10%;
 }
 
-.skills i:hover {
-  transform: scale(1.3);
+.skills .skills_icons i:hover {
   transition: .3s;
-  color: #C8CBCF;
-  transform: none;
+}
+
+.skills .skills_icons i.html:hover {
+  color: #e44d26;
+}
+
+.skills .skills_icons i.css:hover {
+  color: #1572b7;
+}
+
+.skills .skills_icons i.sass:hover {
+  color: #cf649a;
+}
+
+.skills .skills_icons i.js:hover {
+  color: #f0db4f;
+}
+
+.skills .skills_icons i.react:hover {
+  color: #52d8fb;
+}
+
+.skills .skills_icons i.git:hover {
+  color: #413000;
 }
 
 .contact {
-  background-color: #F9F9F9;
   height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
-  height: auto;
+  background-color: #0B1825;
+  height: 50vh;
 }
 
 .contact h2 {
+  opacity: 1;
   text-transform: uppercase;
+  font-weight: 900;
   padding-top: 60px;
   font-size: 35px;
   text-align: center;
-  border-bottom: 1px solid black;
+  color: #C8D1D1;
+}
+
+.contact .contact_icons {
+  margin-top: 50px;
+}
+
+.contact .contact_icons span {
+  font-size: 25px;
+  color: #C8D1D1;
+  padding-bottom: 10px;
 }
 
 .contact i {
-  color: #222D38;
   padding: 0;
-  margin: 0 30px;
+  margin-left: 15%;
+  color: #0B1825;
+  padding: 0;
+  color: #C8D1D1;
   font-size: 40px;
 }
 
 .contact i.fa-envelope, .contact i.fa-phone-square {
-  margin-right: 5px;
+  padding-right: 10px;
+  display: inline;
 }
 
 .contact i.fa-envelope:hover, .contact i.fa-phone-square:hover {
   transform: none;
-  color: #222D38;
+  color: #C8D1D1;
 }
 
 .contact i:hover {
   transform: scale(1.3);
   transition: .3s;
-  color: #C8CBCF;
+  color: #C8D1D1;
+}
+
+.contact i.fa-facebook-square:hover {
+  color: #4267b2;
+}
+
+.contact i.fa-github:hover {
+  color: #323131;
+}
+
+.contact i.fa-linkedin:hover {
+  color: #0077b5;
 }
 
 .contact a {
-  color: #222D38;
+  color: #0B1825;
 }
 
 .contact p.mobile {
@@ -160,8 +244,11 @@ body {
 }
 
 .fa-arrow-up {
+  display: none;
   font-size: 35px;
   position: fixed;
+  color: #253544;
+  opacity: .3;
   top: 85%;
   left: 95%;
 }
@@ -169,23 +256,70 @@ body {
 .fa-arrow-up:hover {
   transform: scale(1.3);
   transition: .3s;
-  color: #C8CBCF;
+  color: #C8D1D1;
+  cursor: pointer;
+  color: #96AAAA;
+  opacity: 1;
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222D38;
+  background-color: #040D16;
   width: 100%;
   height: 50px;
   text-align: center;
   color: #fff;
 }
 
-@media (max-width: 768px) {
-  .contact .fa-facebook-square, .contact .fa-github, .contact .fa-linkedin {
-    display: block;
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero h1 {
+    font-size: 50px;
+  }
+  .about_me {
+    height: auto;
+  }
+  .contact {
+    height: auto;
+  }
+  .contact i {
+    padding: 15px 0;
+    margin-left: 25%;
+  }
+  .contact i.fa-envelope, .contact i.fa-phone-square {
+    margin-left: 10%;
+    margin-bottom: 35px;
+  }
+  .skills {
+    height: auto;
+  }
+  .skills .skills_icons {
+    margin-top: 60px;
+  }
+  .skills .skills_icons i {
+    padding: 10px;
+    margin-left: 25px;
+  }
+  .contact {
+    height: auto;
+  }
+  .fa-arrow-up {
+    z-index: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 25px;
+  }
+  .about_me, .skills, .contact {
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+  .fa-arrow-up {
+    z-index: -1;
   }
 }
 

@@ -1,9 +1,13 @@
-$basic_color: #222D38;
-$section_color: #F9F9F9;
-$accent_color: #C8CBCF;
+$basic_color: #0B1825;
+$section_color: #F1F2F2;
+$accent_color: #C8D1D1;
+$nav_foot: #040D16;
+
+/** {
+	border: 1px solid black;
+}*/
 
 @mixin sections_param {
-	background-color: $section_color;
 	height: 100vh;
 	width: 100%;
 	margin: 0;
@@ -12,16 +16,18 @@ $accent_color: #C8CBCF;
 
 
 @mixin headers_param {
+	opacity: 1;
 	text-transform: uppercase;
+	font-weight: 900;
 	padding-top: 60px;
 	font-size: 35px;
 	text-align: center;
-	border-bottom: 1px solid black;
 }
 
 @mixin p_param {
-	padding-top: 5%;
-	font-size: 25px;
+	padding: 20px;
+	font-size: 20px;
+	margin: 25px;
 }
 
 @mixin hover_icon {
@@ -33,7 +39,6 @@ $accent_color: #C8CBCF;
 @mixin icons {
 	color: $basic_color;
 	padding: 0;
-	margin: 0 30px;
 }
 
 body {
@@ -47,8 +52,7 @@ body {
 	background-size: cover;
 	background-position: top center;
 	background-attachment: fixed;
-	background-repeat: no-repeat;
-	
+	background-repeat: no-repeat;	
 }
 
 .hero {
@@ -60,14 +64,23 @@ body {
 	height: 100vh;
 	width: 100%;
 
-	h1 {
-		color: $basic_color;
-		font-size: 45px;
+	.hello {
+		display: none;
 	}
+
+	h1 {
+			color: $basic_color;
+			font-size: 60px;
+			font-weight: 900;
+		}
 }
 
 .nav {
-	background-color: $basic_color;
+	z-index: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: $nav_foot;
 	width: 100%;
 	height: 50px;
 	padding: 0;
@@ -76,73 +89,144 @@ body {
 	top: 0;
 
 	ul {
+		margin: 0;
 		li {
-			padding-right: 10px;
+			margin-right: 20px;
+			padding: 0 0 5px 0;
+			text-align: center;
 			text-transform: uppercase;
+			font-size: 15px;
+			font-weight: 700;
 			display: inline;
 			color: $accent_color;
 			&:hover {
 				cursor: pointer;
+				border-bottom: 2px solid $accent_color;
 			}
 		}
 	}
 }
 
 .about_me {
+
+	.hide {
+		opacity: 0;
+	}
+	background-color: $basic_color;
 	@include sections_param;
 	h2 {
 		@include headers_param;
+		color: $accent_color;
 	}
 	p {
 		@include p_param;
-	}
-	.info {
-		width: 40%;
-		float: right;
+		color: $accent_color;
 	}
 }
 
 .skills {
+
+	.hide {
+		opacity: 0;
+	}
+
 	@include sections_param;
+	background-color: $accent_color;
+	z-index: -1;
 	h2 {
 		@include headers_param;
+		color: $basic_color;
 	}
 	p {
 		@include p_param;
+		color: $basic_color;
 	}
 
-	i {
-		@include icons;
-		font-size: 60px;
-		margin-left: 10%;
-		&:hover {
-			@include hover_icon;
-			transform: none;
-		}
+	.skills_icons {
+		margin-top: 0;
+		i {
+			&:hover {
+				transition: .3s;
+			}
+			@include icons;
+			font-size: 60px;
+			margin-left: 10%;
 
+			&.html:hover {
+				color: #e44d26;
+			}
+
+			&.css:hover {
+				color: #1572b7;
+			}
+
+			&.sass:hover {
+				color: #cf649a;
+			}
+
+			&.js:hover {
+				color: #f0db4f;
+			}
+
+			&.react:hover {
+				color: #52d8fb;
+			}
+
+			&.git:hover {
+				color: #413000;
+			}
+		}
 	}
 }
 
 .contact {
 	@include sections_param;
-	height: auto;
+	background-color: $basic_color;
+	height: 50vh;
 	h2 {
 		@include headers_param;
+		color: $accent_color;
+	}
+
+	.contact_icons {
+		margin-top: 50px;
+
+		span {
+			font-size: 25px;
+			color: $accent_color;
+			padding-bottom: 10px;
+		}
 	}
 
 	i {
+		padding: 0;
+		margin-left: 15%;
 		@include icons;
+		color: $accent_color;
 		font-size: 40px;
 		&.fa-envelope, &.fa-phone-square {
-			margin-right: 5px;
+			padding-right: 10px;
+			display: inline;
 			&:hover {
 				transform: none;
-				color: $basic_color;
+				color: $accent_color;
 			}
 		}
 
 		&:hover {
 			@include hover_icon;
+		}
+
+		&.fa-facebook-square:hover {
+			color: #4267b2;
+		}
+
+		&.fa-github:hover {
+			color: #323131;
+		}
+
+		&.fa-linkedin:hover {
+			color: #0077b5;
 		}
 
 	}
@@ -160,12 +244,18 @@ body {
 }
 
 .fa-arrow-up {
+	display: none;
 	font-size: 35px;
 	position: fixed;
+	color: #253544;
+	opacity: .3;
 	top: 85%;
 	left: 95%;
 	&:hover {
 		@include hover_icon;
+		cursor: pointer;
+		color: #96AAAA;
+		opacity: 1;
 	}
 }
 
@@ -173,17 +263,73 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: $basic_color;
+	background-color: $nav_foot;
 	width: 100%;
 	height: 50px;
 	text-align: center;
 	color: #fff;
 }
 
-@media (max-width: 768px) {
-	.contact {
-		.fa-facebook-square, .fa-github, .fa-linkedin {
-			display: block;
+@media(min-width: 768px) and (max-width: 991px) {
+	.hero {
+		h1 {
+			font-size: 50px;
 		}
+	}
+
+	.about_me {
+		height: auto;
+	}
+
+
+	.contact {
+		height: auto;
+
+		i {
+			padding: 15px 0;
+			margin-left: 25%;
+
+			&.fa-envelope, &.fa-phone-square {
+				margin-left: 10%;
+				margin-bottom: 35px;
+			}
+		}
+	}
+
+	.skills {
+		height: auto;
+
+		.skills_icons {
+			margin-top: 60px;
+
+			i {
+				padding: 10px;
+				margin-left: 25px;
+			}
+		}
+	}
+
+	.contact {
+		height: auto;
+	}
+
+	.fa-arrow-up {
+		z-index: -1;
+	}
+}
+
+@media(max-width: 767px) {
+	.hero h1 {
+		font-size: 25px;
+	}
+
+	.about_me, .skills, .contact {
+		margin: 0;
+		padding: 0;
+		height: auto;
+	}
+
+	.fa-arrow-up {
+		z-index: -1;
 	}
 }
