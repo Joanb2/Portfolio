@@ -4,11 +4,11 @@ $(function() {
 
 	$(window).on('scroll', function() {
 		$('.hide').each( function(i) {
-			var bottom_obj = $(this).offset().top + $(this).outerHeight();
+			var bottom_obj = $(this).offset().top + $(this).outerHeight() * 0.25;
 			var bottom_win = $(window).scrollTop() + $(window).height();
 
 			if(bottom_win > bottom_obj) {
-				$(this).animate({'opacity':'1'}, 700);
+				$(this).animate({'opacity':'1'}, 600);
 			}
 		});
 	});
