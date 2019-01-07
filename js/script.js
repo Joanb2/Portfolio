@@ -27,6 +27,13 @@ $(function() {
 		);
 	});
 
+	$('#portfolio_scroll').on('click', function() {
+		$('html, body').animate({
+			scrollTop: $('#projects').position().top },
+			1000
+		);
+	});
+
 	$('#in_touch_scroll').on('click', function() {
 		$('html, body').animate({
 			scrollTop: $('#in_touch').position().top },
