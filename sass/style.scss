@@ -5,27 +5,25 @@ $basic_color: #0B1825;
 $section_color: #F1F2F2;
 $accent_color: #C8D1D1;
 $nav_foot: #040D16;
+$bright: #D58936;
 
 
 @mixin sections_param {
-	height: 100vh;
 	width: 100%;
 	margin: 0;
-	padding: 55px 0;
+	padding: 75px;
 }
-
 
 @mixin headers_param {
 	opacity: 1;
 	text-transform: uppercase;
 	font-weight: 900;
-	font-size: 30px;
+	font-size: 28px;
 	text-align: center;
 }
 
 @mixin p_param {
 	margin: 50px auto 0 auto;
-	padding: 20px;
 	font-size: 20px;
 	width: 80%;
 }
@@ -55,7 +53,7 @@ body {
 }
 
 .container-fluid {
-	height: 100%;
+	padding: 0;
 }
 
 // Hero & Nav
@@ -75,7 +73,7 @@ body {
 
 	h1 {
 			color: $basic_color;
-			font-size: 60px;
+			font-size: 45px;
 			font-weight: 900;
 		}
 }
@@ -88,7 +86,7 @@ body {
 	background-color: $nav_foot;
 	width: 100%;
 	height: 50px;
-	padding: 0;
+	padding: 30px;
 	margin: 0;
 	position: fixed;
 	top: 0;
@@ -121,6 +119,7 @@ body {
 
 	background-color: $basic_color;
 	@include sections_param;
+	min-height: 100vh;
 
 	h2 {
 		@include headers_param;
@@ -144,8 +143,11 @@ body {
 	}
 
 	@include sections_param;
+	padding: 75px 0;
 	background-color: $section_color;
 	z-index: -1;
+	min-height: 100vh;
+
 	h2 {
 		@include headers_param;
 		color: $basic_color;
@@ -207,6 +209,7 @@ body {
 .portfolio {
 	@include sections_param;
 	background-color: $basic_color;
+	min-height: 100vh;
 
 	.hide {
 		opacity: 0;
@@ -263,62 +266,6 @@ body {
 			}
 		}
 
-		.rest {
-			text-align: left;
-			height: 200px;
-			padding: 60px 0 60px 60px;
-			font-style: italic;
-			p {
-				display: inline;
-				color: #fff;
-				font-size: 20px;
-				font-weight: 700;
-			}
-
-			@-webkit-keyframes spin {
-				from {
-				    -webkit-transform: rotate(0deg);
-				    -o-transform: rotate(0deg);
-				    transform: rotate(0deg);
-				}
-				to {
-				    -webkit-transform: rotate(360deg);
-				    -o-transform: rotate(360deg);
-				    transform: rotate(360deg);
-				}
-			}
-
-			@keyframes spin {
-				from {
-					-ms-transform: rotate(0deg);
-				    -moz-transform: rotate(0deg);
-				    -webkit-transform: rotate(0deg);
-				    -o-transform: rotate(0deg);
-				    transform: rotate(0deg);
-				}
-
-				to {
-					-ms-transform: rotate(360deg);
-				    -moz-transform: rotate(360deg);
-				    -webkit-transform: rotate(360deg);
-				    -o-transform: rotate(360deg);
-				    transform: rotate(360deg);
-				}
-			}
-
-			.rotate {
-				text-align: center;
-				color: #fff;
-				font-size: 75px;
-				-webkit-animation: spin 5s linear infinite;
-				-moz-animation: spin 5s linear infinite;
-				-ms-animation: spin 5s linear infinite;
-				-o-animation: spin 5s linear infinite;
-				animation: spin 5s linear infinite;
-			}
-
-		}
-
 	}
 
 	p {
@@ -339,7 +286,7 @@ body {
 
 	@include sections_param;
 	background-color: $section_color;
-	height: 40vh;
+	height: 50vh;
 
 	h2 {
 		@include headers_param;
@@ -360,7 +307,7 @@ body {
 				padding: 0;
 				margin-left: 75px;
 				color: $basic_color;
-				font-size: 50px;
+				font-size: 45px;
 
 				&.fa-envelope, &.fa-phone-square {
 					padding-right: 10px;
@@ -381,6 +328,7 @@ body {
 		}
 
 		.links {
+			margin-top: 35px;
 			a {
 				display: inline-block;
 				margin-left: 15%;
@@ -504,6 +452,11 @@ footer {
 
 	}
 
+	.portfolio {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
 
 	.contact {
 		padding-bottom: 15px;
@@ -558,6 +511,7 @@ footer {
 
 	.nav {
 		height: auto;
+		padding: 15px;
 
 		label {
 			display: block;
@@ -656,31 +610,35 @@ footer {
 	}
 
 	.contact {
-		text-align: left;
-
-		.mobile, .links {
-			display: block;
-			padding: 15px;
-		}
 
 		.contact_icons {
 			margin-top: 0;
-			
-			.mail, .phone {
-				font-size: 20px;
 
-				i {
-					font-size: 35px;
+				.mobile {
+					text-align: left;
+					display: block;
+					padding: 15px;
+
+					.mail, .phone {
+						font-size: 20px;
+
+						i {
+							font-size: 35px;
+							margin-left: 10%;
+						}
+					}
 				}
-			}
-		}
 
-		.links {
-			padding-bottom: 0;
+				.links {
+					text-align: center;
+					display: block;
+					padding: 15px;
 
-			i {
-				font-size: 40px;
-			}
+					a {
+						margin: 15px;
+					}
+				}
+			
 		}
 	}
 }
