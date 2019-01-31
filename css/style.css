@@ -7,13 +7,48 @@ body {
   font-family: 'Quicksand', sans-serif;
   padding: 0;
   margin: 0;
-  position: relative;
-  height: 100vh;
-  background-image: url("https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-size: cover;
-  background-position: top center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  /*position: relative;
+	height: 100vh;
+	background-image: url("https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-size: cover;
+	background-position: top center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;*/
+  background-color: #0B1825;
+  text-align: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body h1 {
+  margin-top: 100px;
+  color: #F1F2F2;
+}
+
+body h1 i {
+  color: #F1F2F2;
+  animation: rotate  10s linear infinite;
+}
+
+body p {
+  color: #F1F2F2;
+  font-size: 25px;
+}
+
+body a {
+  color: #F1F2F2;
+}
+
+body a:hover {
+  color: #C8D1D1;
+  text-decoration: none;
 }
 
 .container-fluid {

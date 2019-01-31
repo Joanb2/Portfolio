@@ -43,13 +43,51 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	padding: 0;
 	margin: 0;
-	position: relative;
+	/*position: relative;
 	height: 100vh;
 	background-image: url("https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 	background-size: cover;
 	background-position: top center;
 	background-attachment: fixed;
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;*/
+	background-color: $basic_color;
+	text-align: center;
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	h1 {
+		margin-top: 100px;
+		color: $section_color;
+
+		i {
+			color: $section_color;
+			animation: rotate  10s linear infinite;
+		}
+	}
+
+	p {
+		color: $section_color;
+		font-size: 25px;
+	}
+
+	a  {
+		color: $section_color;
+		&:hover {
+			color: $accent_color;
+			text-decoration: none;
+		}
+
+	}
+
+
 }
 
 .container-fluid {
